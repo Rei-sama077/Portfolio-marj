@@ -4,24 +4,25 @@
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href = "style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Marjorie Matilos - Portfolio</title>
 </head>
 <body>
     <!-- Header Section Code -->
-    <header class="header">
+    <header id= "mainHeader" class="header">
         <a href="#home" class="logo">
             <img src="Assets/Icon.svg" alt="Logo" width="100"></a>
 
         <nav class="navbar">
-            <a href="#home">About</a>
+            <a href="#about">About</a>
             <a href="#education">Education</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
             </nav>
             </header>
-    <!-- Header Section Code -->
-    <section class = "home" id="home">
+    <!-- About Section Code -->
+    <section class = "home" id="about">
         <!-- text contents-->
         <div class="home-content">
             <h1>Hello World!</h1>
@@ -44,11 +45,16 @@
             <div class="home-img">
             <div class="circle-shape">
             <img src="Assets/picture.png" alt="Profile Image">
+
+            <!-- the skills part-->
+
+                
         </div>
     </section>
-   <!-- About Section Code -->
+   <!-- Education Section Code -->
     <section class="education" id="education">
     <div class ="education-content">
+        <div class="section-anchor" id="education-anchor"></div>
         <h3>What I have studied so far</h3>
         <h1>Education</h1> 
     <!--Timeline-->
@@ -156,7 +162,7 @@
             <!-- Trek-Trails-->
              <div class="project-card">
             <div class="project-image-container-website-left">
-                    <img src="" alt="Whaloo-Screenshot">
+                    <img src="Assets/trek-trail1.png" alt="trek-trails-Screenshot">
                     </div>
                 <div class="project-details">
                     <h3>Trek-Trails</h3>
@@ -194,5 +200,12 @@
             </div>
         </div>
     </section>
+   <!-- Contact Section Code -->
+    <section class="contact" id="contact">
+    <div class ="projects-content">
+        <h2 class="heading">Featured<span> Projects</span></h2> 
+    </div>
+    </section>
+    <script src="header-scroll.js"></script>
 </body>
 </html>
