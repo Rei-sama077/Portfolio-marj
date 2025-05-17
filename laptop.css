@@ -1,3 +1,12 @@
+:root
+{
+    --bg-color: #FFFFFF;
+    --snd-bg-color:#E1E1E1;
+    --text-color: #3C3C3D;
+    --main-color: #05C274;
+    --shadow-color: #D9D9D9;
+}
+
 .laptop {
 	position: relative;
 	margin: auto;
@@ -100,21 +109,22 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px;
+    margin-bottom: 10%;
+
 }
 
 .contact-form-section {
     flex: 2; 
     min-width: auto; 
-    max-width: 500px;
     width: 100%;
     
 }
 
 .contact-form-section h3 {
     font-size: 1.8em; 
-    margin-bottom: 25px;
-    color: #333;
-    align-items: center;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    text-align: left;
 }
 
 .form-and-profile {
@@ -146,17 +156,25 @@
 .form-group input[type="email"],
 .form-group input[type="tel"],
 .form-group textarea {
-    width: 200%; 
+    width: 100%; 
     padding: 12px 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1.3em;
     box-sizing: border-box; 
     background-color: #f9f9f9; 
     color: #333;
-    text-align: left;
     align-items: center;
 
+}
+
+
+.form-group input[type="text"]:hover,
+.form-group input[type="email"]:hover,
+.form-group input[type="tel"]:hover,
+.form-group textarea:hover {
+    border-color: var(--main-color); 
+    background-color: var(--snd-bg-color); 
 }
 
 .form-group textarea {
@@ -173,21 +191,20 @@
 .send-message-btn {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #e74c3c; 
+    background-color:var(--main-color); 
     color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 1.1em;
     cursor: pointer;
-    width: 80%;
+    width: 50%;
     transition: background-color 0.3s ease;
-    margin-right: 30px;
-    align-items: center;
-
+    margin-right: auto;
+justify-content:center ;
 }
 
 .send-message-btn:hover {
-    background-color: #c0392b; 
+    background-color: var(--text-color); 
 }
 
 .contact-info-section {
@@ -195,14 +212,13 @@
     display: flex;
     flex-direction: column; 
     align-items: center; 
-    margin-left: 30%;
-    
+    justify-content: center;    
 }
 
 .profile-avatar-container {
     width: 150px; 
     height: 150px;
-    border: 3px solid #007bff; 
+    border: 5px solid var(--snd-bg-color); 
     border-radius: 50%; 
     overflow: hidden; 
     display: flex;
@@ -219,13 +235,13 @@
 }
 
 .info-box {
-    background-color: #2ecc71; 
+    background-color: var(--main-color); 
     color: #fff;
     padding: 30px;
     border-radius: 5px;
     width: 100%; 
     max-width: 250px; 
-    text-align: center; 
+    text-align: left; 
     margin-top: 20px;
 }
 

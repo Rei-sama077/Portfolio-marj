@@ -27,21 +27,3 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-
-tabItems.forEach(tab => {
-    tab.addEventListener('click', (e) => {
-        e.preventDefault(); // <-- This is critical
-        const filter = tab.getAttribute('data-filter');
-
-        // Update active class
-        tabItems.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        // Show/hide items
-        techToolItems.forEach(item => {
-            const category = item.getAttribute('data-category');
-            item.style.display = (filter === 'all' || category === filter) ? 'block' : 'none';
-        });
-    });
-});
