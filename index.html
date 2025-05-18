@@ -286,6 +286,19 @@
     <div class ="contact-content">
         <h2 class="contact-heading">Contact<span> Me</span></h2> 
     </div>
+
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "UEyVvRODWixVpc1Za",
+      });
+   })();
+    </script>
+
     <div class="container">
     <div class="laptop">
     <div class="laptop__screen">
@@ -293,8 +306,8 @@
     <div class="form-and-profile">
     <div class="contact-form-section">
         <h3>LEAVE A MESSAGE</h3>
-        <form action="send_email.php" method="post"> 
-        <input type="hidden" name="_captcha" value="false">
+        <!--<form action="/test.php" method="post"> -->
+    <input type="hidden" name="_captcha" value="false">
     <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Name" required>
@@ -311,7 +324,7 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="6" placeholder="Message" required></textarea>
     </div>
-                <button type="submit" class="send-message-btn">Send message</button>
+                <button type="button" onclick= "sendMail()" class="send-message-btn">Send message</button>
         </form>
 
     </div>
