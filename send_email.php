@@ -1,5 +1,6 @@
-<?php
 
+<?php
+/*
 if(empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["message"])) {
     die("Please fill all required fields");
 }
@@ -46,3 +47,4 @@ echo "email sent";
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+*/
