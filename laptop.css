@@ -217,7 +217,6 @@
 
 
 .send-message-btn {
-    display: inline-block;
     padding: 12px 30px;
     background-color:var(--main-color); 
     color: #fff;
@@ -228,11 +227,17 @@
     width: 50%;
     transition: background-color 0.3s ease;
     margin-right: auto;
-justify-content:center ;
+    justify-content: center;
 }
 
 .send-message-btn:hover {
     background-color: var(--text-color); 
+        transform: translateY(-2px);
+
+}
+
+.send-message-btn:active {
+    transform: translateY(0);
 }
 
 .contact-info-section {
@@ -286,6 +291,8 @@ justify-content:center ;
     font-weight: bold;
     font-size: 1.1em;
 }
+
+
 
 @media (max-width: 768px) {
     .laptop {
