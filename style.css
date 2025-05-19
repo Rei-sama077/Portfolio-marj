@@ -21,6 +21,7 @@
     --text-color: #3C3C3D;
     --main-color: #05C274;
     --shadow-color: #D9D9D9;
+    --secondary-color: #F6F8F6;
 }
 
 
@@ -30,9 +31,9 @@ html{
 }
 body {
   position: relative;
-  padding: 0px;
+  padding: 0%;
     
-}
+     }
 
 body::before {
   content: "";
@@ -41,12 +42,10 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('Assets/BG.svg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.8; 
-  filter: blur(10px); 
   z-index: -1;
+  background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/1.svg');
+  background-size: cover;
+  background-position: top;
 }
 
 section {
@@ -66,7 +65,7 @@ section {
     align-items: center;
     justify-content: space-between; 
     padding: 0.2rem 5%;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
     backdrop-filter: blur(20px);
     transition: all 0.5s ease;
     border-bottom: 1px solid transparent;
@@ -145,8 +144,6 @@ transform: scale(1.05);
         padding: 1rem 3%;
         background: var(--bg-color);
         backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
         display: none;
         flex-direction: column;
         gap: 1.5rem;
@@ -155,16 +152,41 @@ transform: scale(1.05);
 
     .navbar.active {
         display: flex;
+
     }
 
     .navbar a {
-        font-size: 2rem;
-        padding: 1rem 0;
+        width: 100%;
+        padding: 1.5rem 0;
+        text-align: center;
+        display: block;
+        
+        
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        background-color: rgba(5, 194, 116, 0.1); 
+        color: var(--main-color);
+
     }
 
     .navbar a::before {
-        height: 2px;
+        width: 100%;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease;
+
     }
+
+    .navbar a:hover::before,
+    .navbar a.active::before {
+    transform: scaleX(1);
+
+    }
+
+    
 }
 
 
@@ -314,16 +336,65 @@ transform: scale(1.05);
 
 
 /* Home Section Code */
-.home{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;  
-    margin-bottom: 10%;
-    margin-top: 5%;
+.home {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 5rem 10%;
+  overflow: hidden;
+  background-image: url('https://gist.githubusercontent.com/mondenoir/5395b6e7d9445c3a0fc82e6ece97268c/raw/bca5c0c6397e38d79b5af9e88f78f0aa7b515b94/img-1.svg');
+  background-size: cover;
+  background-position: center 25%;
 
+}
 
-    }
+/* .card__grid-effect {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.card__grid-effect-tile {
+  position: relative;
+}
+
+.card__grid-effect-tile::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0.3rem;
+  width: 0.3rem;
+  border-radius: 50%;
+  background: transparent;
+  transition: 500ms linear all;
+  box-shadow:
+    3rem 0 0 -0.3rem, -3rem 0 0 -0.3rem,
+    0 -3rem 0 -0.3rem, 0 3rem 0 -0.3rem,
+    3rem 3rem 0 -1.35rem, 3rem -3rem 0 -1.35rem,
+    -3rem 3rem 0 -1.35rem, -3rem -3rem 0 -1.35rem;
+}
+
+.card__grid-effect-tile:hover::before {
+  height: 3rem;
+  width: 3rem;
+  transition: 70ms linear all;
+  color: #05C274;
+} */
+
+/* Make sure content appears above the grid */
+.home-content,
+.home-img {
+  z-index: 1;
+  position: relative;
+}
 
 .parent {
     display: flex;
@@ -346,8 +417,8 @@ transform: scale(1.05);
     color: var(--text-color);
     margin-bottom: 1rem;
     text-align: left;
-word-wrap: break-word;
-hyphens: auto;
+    word-wrap: break-word;
+    hyphens: auto;
 
 }
 
@@ -360,8 +431,8 @@ hyphens: auto;
     margin-bottom: 1.0rem;
     text-align: left;
     line-height: 1.1;
-word-wrap: break-word;
-hyphens: auto;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .home-content p {
@@ -386,8 +457,8 @@ hyphens: auto;
 }
 
 .home-img img {
-  --s: clamp(20px, 3vw, 40px);  /* Responsive wave size */
-  --w: clamp(200px, 25vw, 400px); /* Responsive image width */
+  --s: clamp(20px, 3vw, 40px);  
+  --w: clamp(200px, 25vw, 400px); 
   
   width: round(var(--w),4*var(--s)); 
   aspect-ratio: 1;
@@ -407,7 +478,6 @@ hyphens: auto;
   height: auto;
   display: block;
   margin: 0 auto;
-
 }
 
 
@@ -462,7 +532,7 @@ hyphens: auto;
         flex-direction: column; 
         text-align: center; 
         align-items: center;
-    padding: 100px 20px;
+        padding: 100px 20px;
     }
 
     .home-content {
@@ -475,9 +545,10 @@ hyphens: auto;
     }
     .home-img {
         order: 1; 
-        width: 60vw; 
+        width: 100%; 
         height: 60vw;
         margin-bottom: 20px;
+        justify-content: center;
     }
 
     .home-img img {
@@ -485,7 +556,11 @@ hyphens: auto;
         --w: 300px; 
     }
     
+    .scroll {
+    color: var(--shadow-color);
+    margin-bottom: 5%;
 
+}
 
     .home-content h3 {
         font-size: 2.5em;
@@ -499,6 +574,8 @@ hyphens: auto;
 
     .home-content p {
         font-size: 1.5em;
+        top: 5px;
+        color: var(--bg-color);
     }
 
     @media (max-width: 480px) {
@@ -512,6 +589,34 @@ hyphens: auto;
     }
     }
 }
+
+.image-indicator-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    flex: 1;
+    position: relative;
+}
+
+
+
+.scroll-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #1e293b;
+    animation: bounce 1.5s infinite;
+    }
+
+        @keyframes bounce {
+            0%, 100% {
+        transform: translateY(0);
+            }
+        50% {
+        transform: translateY(10px);
+            }
+        }
+
 
 
 
@@ -747,6 +852,8 @@ hyphens: auto;
         font-size: 1.1rem;
     }
 }
+
+
 
 /* Projects Section code */
 .projects-content {
