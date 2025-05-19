@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Toggle mobile menu
 const menuIcon = document.querySelector('#menu-icon');
 const navbar = document.querySelector('.navbar');
 
@@ -37,7 +36,6 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
 };
 
-// Close menu when clicking on a link
 document.querySelectorAll('.navbar a').forEach(link => {
     link.addEventListener('click', () => {
         navbar.classList.remove('active');
@@ -45,8 +43,18 @@ document.querySelectorAll('.navbar a').forEach(link => {
     });
 });
 
-// Close menu when scrolling
 window.onscroll = () => {
     navbar.classList.remove('active');
     menuIcon.classList.remove('bx-x');
 };
+
+
+const layers = document.querySelectorAll('.layer');
+
+function parallax() {
+  const y = window.scrollY;
+  // Only apply transform to the last layer (index 5)
+  layers[5].style.transform = `translateY(${0.5 * y}px)`; // Adjust 0.5 to control speed
+}
+
+window.addEventListener('scroll', parallax, false);
