@@ -17,11 +17,33 @@ emailjs.send(serviceID,templateID,params)
                document.getElementById("phone").value = "";
                document.getElementById("message").value = "";
                console.log(res);
-               alert("your message sent successfully");
-    
-})
-.catch((err) => {
+               showSuccessNotification();
+        })
+        .catch((err) => {
             console.log(err);
             alert("Error sending message: " + err.text);
         });
-    }
+}
+
+
+function showSuccessNotification() {
+    const notification = document.createElement('div');
+    notification.className = 'success-notification';
+    notification.innerHTML = `
+        <div class="checkmark">✓</div>
+        <div class="message">Successfully sent</div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
+}
