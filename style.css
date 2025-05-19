@@ -30,7 +30,7 @@ html{
 }
 body {
   position: relative;
-  padding: 20px;
+  padding: 0px;
     
 }
 
@@ -124,6 +124,49 @@ transform: scale(1.05);
 }
 
 
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        font-size: 2rem;
+        padding: 1rem 0;
+    }
+
+    .navbar a::before {
+        height: 2px;
+    }
+}
+
 
 
 /* Technology/Skills Section Code */
@@ -154,7 +197,7 @@ transform: scale(1.05);
     margin-bottom: 50px;
     color: var(--text-color); 
     font-family: 'UVN-Mang-Tre';
-    line-height: 0.8;
+    line-height: 1.2;
 
 
 }
@@ -256,7 +299,7 @@ transform: scale(1.05);
 
 @media (max-width: 768px) {
     .technologies-section h2 {
-        font-size: 4.0em;
+        font-size: 5em;
     }
 
     .tabs-navigation {
@@ -323,6 +366,7 @@ hyphens: auto;
 
 .home-content p {
     font-size: 1.6rem;
+    text-align: justify;
 }
 
 .home-img {
@@ -396,7 +440,7 @@ hyphens: auto;
     display: inline-flex;
     padding: 1rem 2.8rem;
     background: var(--main-color);
-    border-radius: 2rem;
+    border-radius: 1rem;
     box-shadow: none;
     font-size: 1.6rem;
     color: var(--bg-color);
@@ -669,7 +713,7 @@ hyphens: auto;
     }
 
     .education-content h1 {
-        font-size: 4rem; /* Reduce font size for mobile */
+        font-size: 5rem; 
         margin-bottom: 50px;
     }
 
@@ -678,7 +722,6 @@ hyphens: auto;
     }
 }
 
-/* For very small screens */
 @media (max-width: 480px) {
     .timeline-items::before {
         left: 20px;
@@ -944,6 +987,9 @@ hyphens: auto;
         padding: 20px;
         gap: 15px;
     }
+     .heading {
+        font-size: 5rem;
+    }
 
     .project-image-container,
     .project-image-container-website,
@@ -1014,5 +1060,4 @@ hyphens: auto;
         font-size: 0.85rem;
     }
 }
-
 
