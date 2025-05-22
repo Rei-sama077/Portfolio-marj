@@ -66,7 +66,6 @@ section {
     justify-content: space-between; 
     padding: 0.2rem 5%;
     background: transparent;
-    backdrop-filter: blur(20px);
     transition: all 0.5s ease;
     border-bottom: 1px solid transparent;
 }
@@ -74,7 +73,10 @@ section {
 .header-scrolled {
     border-bottom: 1px solid var(--text-color);
     background: rgba(255, 255, 255, 0.2); 
+        backdrop-filter: blur(20px);
+
 }
+
 .logo {
     cursor: pointer;
     transition: 0.3s ease;
@@ -136,6 +138,9 @@ transform: scale(1.05);
         display: block;
     }
 
+    .header{
+        background: transparent;
+    }
     .navbar {
         position: absolute;
         top: 100%;
@@ -494,6 +499,7 @@ transform: scale(1.05);
     color: var(--text-color);
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
+    
 
 }
 

@@ -23,8 +23,9 @@
 		background: #ecf1f7;
 		background-image: linear-gradient(to bottom, #333, #111);
 		box-shadow: 0 .1rem 0 #cfcfcf;
-      
 		border: 2px solid #ccc;
+        		z-index: 1;
+
 
 		img {
 			display: block;
@@ -43,7 +44,9 @@
 		height: .7rem;
 		background: #e9eff5;
 		background-image: linear-gradient(to right, #d2dde9 0%, #f9fcff 15%, #e5ebf2 40%, #e5ebf2 60%, #f9fcff 85%, #d2dde9 100%);
-		
+		z-index: 2;
+
+
 		&::before {
 			display: block;
 			margin: 0 auto;
@@ -98,6 +101,22 @@
 	}
 }
 
+/* Raccoon Pseudo-element */
+.laptop::before {
+    content: ''; /* Essential for pseudo-elements */
+    position: absolute;
+    /* Adjust these values to position your raccoon */
+    top: 90%; /* Center vertically relative to laptop */
+    right: -150px; /* Adjust this to move it further left or right */
+    transform: translateY(-50%); /* For perfect vertical centering */
+    width: 250px; /* Adjust based on your raccoon image size */
+    height: 250px; /* Adjust based on your raccoon image size */
+    background-image: url('Assets/racoon.png'); /* **Replace with the actual path to your raccoon PNG** */
+    background-size: contain; /* Ensures the image fits within the defined width/height */
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3; 
+}
 
 
 
@@ -302,6 +321,12 @@
         margin-bottom: 10%;
     }
 
+    .laptop::before {
+        right: -100px; /* Adjust as needed */
+        width: 100px;
+        height: 100px;
+    }
+
     .laptop-screen-content {
         flex-direction: column;
         padding: 20px;
@@ -371,9 +396,21 @@
         padding: 1.5%;
     }
 
+    .laptop::before {
+        right: -80px; /* Adjust as needed */
+        width: 80px;
+        height: 80px;
+    }
+
     .laptop-screen-content {
         padding: 15px;
         min-height: 300px;
+    }
+
+    .laptop::before {
+        left: -60px; /* Adjust as needed */
+        width: 60px;
+        height: 60px;
     }
 
     .contact-form-section h3 {
@@ -402,6 +439,7 @@
     .laptop-screen-content {
         padding: 10px;
     }
+
 
     .profile-avatar-container {
         width: 100px;
