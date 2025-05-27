@@ -8,3 +8,5 @@ function parallax() {
 }
 
 window.addEventListener('scroll',parallax,false);
+
+

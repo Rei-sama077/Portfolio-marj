@@ -65,7 +65,7 @@
             </script>
         </div>
     <div class="scroll absolute bottom-8 left-1/2 -translate-x-1/2 order-3">
-    <svg class="scroll-icon animate-bounce w-6 h-6 text-gray-500" fill="none" stroke="currentColor"
+    <svg class="scroll-icon animate-bounce w-6 h-6  " fill="none" stroke="currentColor"
         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
     </svg>
@@ -211,6 +211,56 @@
                 <div class="project-image-container">
                     <img src="Assets/sub.png" alt="Whaloo-Screenshot">
                     </div>
+                <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageUrlsWhaloo = [
+                'Assets/fc.png',
+                'Assets/todo.png',
+                'Assets/sche.png',
+                'Assets/sub.png',
+            ];
+            const imageAltsWhaloo = [
+                'flashcard-whaloo',
+                'todo-whaloo',
+                'flashcard-whaloo',
+                'Subject-whaloo',
+            ];
+
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach(card => {
+                const imageContainer = card.querySelector('.project-image-container');
+                if (!imageContainer) return;
+                const projectImage = imageContainer.querySelector('img');
+                if (!projectImage) return;
+
+                let imageChangeInterval;
+                let currentImageIndex = 0;
+                const originalSrc = projectImage.src;
+                const originalAlt = projectImage.alt;
+
+                card.addEventListener('mouseenter', () => {
+                    if (projectImage.src !== imageUrlsWhaloo[0]) {
+                        projectImage.src = imageUrlsWhaloo[0];
+                        projectImage.alt = imageAltsWhaloo[0];
+                        currentImageIndex = 0;
+                    }
+                    imageChangeInterval = setInterval(() => {
+                        currentImageIndex = (currentImageIndex + 1) % imageUrlsWhaloo.length;
+                        projectImage.src = imageUrlsWhaloo[currentImageIndex];
+                        projectImage.alt = imageAltsWhaloo[currentImageIndex];
+                    }, 1000);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    clearInterval(imageChangeInterval);
+                    projectImage.src = originalSrc;
+                    projectImage.alt = originalAlt;
+                    currentImageIndex = 0;
+                });
+            });
+        });
+    </script>
                 <div class="project-details">
                     <h3>Whaloo</h3>
                     <p class="project-description">
@@ -246,6 +296,56 @@
                 </div>
             </div>
             <!-- Gearfolio-->
+         <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageUrls = [
+                'Assets/2.png',
+                'Assets/3.png',
+                'Assets/4.png',
+                'Assets/5.png',
+            ];
+            const imageAlts = [
+                'Gearfolio',
+                'Gearfolio',
+                'Gearfolio',
+                'Gearfolio',
+            ];
+
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach(card => {
+                const imageContainer = card.querySelector('.project-image-container-website');
+                if (!imageContainer) return;
+                const projectImage = imageContainer.querySelector('img');
+                if (!projectImage) return;
+
+                let imageChangeInterval;
+                let currentImageIndex = 0;
+                const originalSrc = projectImage.src;
+                const originalAlt = projectImage.alt;
+
+                card.addEventListener('mouseenter', () => {
+                    if (projectImage.src !== imageUrls[0]) {
+                        projectImage.src = imageUrls[0];
+                        projectImage.alt = imageAlts[0];
+                        currentImageIndex = 0;
+                    }
+                    imageChangeInterval = setInterval(() => {
+                        currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+                        projectImage.src = imageUrls[currentImageIndex];
+                        projectImage.alt = imageAlts[currentImageIndex];
+                    }, 1000);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    clearInterval(imageChangeInterval);
+                    projectImage.src = originalSrc;
+                    projectImage.alt = originalAlt;
+                    currentImageIndex = 0;
+                });
+            });
+        });
+    </script>
         <div class="project-card">
                 <div class="project-details">
                     <h3>Gearfolio</h3>
@@ -275,9 +375,63 @@
             </div>
 
             <!-- Trek-Trails-->
+             <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageUrlsTek = [
+                'Assets/trek-trail1.png',
+                'Assets/tek-3.png',
+                'Assets/tek-4.png',
+                'Assets/tek-5.png',
+                'Assets/tek-6.png',
+                'Assets/tek-7.png',
+                'Assets/tek-8.png',
+                'Assets/tek-9.png',
+            ];
+            const imageAltsTek = [
+                'Gearfolio',
+                'Gearfolio',
+                'Gearfolio',
+                'Gearfolio',
+            ];
+
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach(card => {
+                const imageContainer = card.querySelector('.project-image-container-website-left');
+                if (!imageContainer) return;
+                const projectImage = imageContainer.querySelector('img');
+                if (!projectImage) return;
+
+                let imageChangeInterval;
+                let currentImageIndex = 0;
+                const originalSrc = projectImage.src;
+                const originalAlt = projectImage.alt;
+
+                card.addEventListener('mouseenter', () => {
+                    if (projectImage.src !== imageUrlsTek[0]) {
+                        projectImage.src = imageUrlsTek[0];
+                        projectImage.alt = imageAltsTek[0];
+                        currentImageIndex = 0;
+                    }
+                    imageChangeInterval = setInterval(() => {
+                        currentImageIndex = (currentImageIndex + 1) % imageUrlsTek.length;
+                        projectImage.src = imageUrlsTek[currentImageIndex];
+                        projectImage.alt = imageAltsTek[currentImageIndex];
+                    }, 1000);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    clearInterval(imageChangeInterval);
+                    projectImage.src = originalSrc;
+                    projectImage.alt = originalAlt;
+                    currentImageIndex = 0;
+                });
+            });
+        });
+    </script>
              <div class="project-card">
             <div class="project-image-container-website-left">
-                    <img src="Assets/trek-trail1.png" alt="trek-trails-Screenshot">
+                    <img src="Assets/tek-1.png" alt="trek-trails-Screenshot">
                     </div>
                 <div class="project-details">
                     <h3>Trek-Trails</h3>
