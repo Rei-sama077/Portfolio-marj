@@ -105,6 +105,11 @@
         &nbsp
         <p>Flutter</p>
     </div>
+    <div class="tech-tool-item" data-category="framework">
+        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m10.4 17.8 1.21 2.07L19.77 22 22 14.08 20.72 12 22 10l-2.23-8-8.16 2.13L10.4 6.2H8L2 12l6 5.81zm9.92-5.8-1.73 6L15 12l3.59-6zM10.6 6.54 16.84 5l-3.59 6H6.08zM13.27 13l3.59 6-6.26-1.55L6.1 13z"></path></svg>
+        &nbsp
+        <p>Unity</p>
+    </div>
     
     <!-- Language Items -->
     <div class="tech-tool-item" data-category="language">
@@ -272,7 +277,7 @@
                         focus, productivity, and academic success by providing smart reminders and individualized study 
                         recommendations.   </p>
                     <div class="project-tags">
-                        <span class="tag">Dart</span>
+                        <span class="tag">Flutter</span>
                         <span class="tag">Css</span>
                         <span class="tag">Adobe Illustrator</span>
                     </div>
@@ -373,7 +378,6 @@
                     <img src="Assets/gearfolio.png" alt="Whaloo-Screenshot">
                     </div>
             </div>
-
             <!-- Trek-Trails-->
              <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -434,7 +438,7 @@
                     <img src="Assets/tek-1.png" alt="trek-trails-Screenshot">
                     </div>
                 <div class="project-details">
-                    <h3>Trek-Trails</h3>
+                    <h3>Tek-Trails</h3>
                     <p class="project-description">
                         Tek-Trails is a Unity-based educational app that combines learning and entertainment through interactive flashcards, mini-games, and a virtual campus tour. 
                         It uses SQLite for database management and Aseprite for UI design, offering an engaging and immersive learning experience.
@@ -449,10 +453,10 @@
                             <i class="fas fa-clock"></i> Post-deployment
                         </span>
                         <span class="info-item">
-                            <i class="fas fa-user-cog"></i> Front-end
+                            <i class="fas fa-user-cog"></i> Front-end 
                         </span>
                         <span class="info-item">
-                            <i class="fas fa-user-cog"></i> UI/UX designer
+                            <i class="fas fa-user-cog"></i> UI/UX/Game designer
                         </span>
                         <span class="info-item">
                             <i class="fas fa-user-cog"></i> Quality Assurance
@@ -462,6 +466,88 @@
                         Visit Site <i class="fas fa-external-link-alt"></i>
                     </a> -->
                 </div>
+            </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageUrlsHira = [
+                'Assets/hira-2.png',
+                'Assets/hira-3.png',
+                'Assets/hira-4.png',
+                'Assets/hira-1.png',
+            ];
+            const imageAltsHira = [
+                'Hiraeth',
+                'Hiraeth',
+                'Hiraeth',
+                'Hiraeth',
+            ];
+
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach(card => {
+                const imageContainer = card.querySelector('.project-image-container-website-hira');
+                if (!imageContainer) return;
+                const projectImage = imageContainer.querySelector('img');
+                if (!projectImage) return;
+
+                let imageChangeInterval;
+                let currentImageIndex = 0;
+                const originalSrc = projectImage.src;
+                const originalAlt = projectImage.alt;
+
+                card.addEventListener('mouseenter', () => {
+                    if (projectImage.src !== imageUrlsHira[0]) {
+                        projectImage.src = imageUrlsHira[0];
+                        projectImage.alt = imageAltsHira[0];
+                        currentImageIndex = 0;
+                    }
+                    imageChangeInterval = setInterval(() => {
+                        currentImageIndex = (currentImageIndex + 1) % imageUrlsHira.length;
+                        projectImage.src = imageUrlsHira[currentImageIndex];
+                        projectImage.alt = imageAltsHira[currentImageIndex];
+                    }, 1000);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    clearInterval(imageChangeInterval);
+                    projectImage.src = originalSrc;
+                    projectImage.alt = originalAlt;
+                    currentImageIndex = 0;
+                });
+            });
+        });
+    </script>
+            <!-- Hiraeth For Bravery -->
+        <div class="project-card">
+                <div class="project-details">
+                    <h3>Hiraeth For Bravery</h3>
+                    <p class="project-description">
+                        "Hiraeth For Bravery" is a turn-based RPG that immerses players in a hauntingly beautiful world where magic and destiny intertwine. 
+                        You play as a lone hero, separated from her companions on a perilous journey to defeat a corrupted king. As memories of home tug at her spirit, she must summon unyielding courage and discover hidden strength to face relentless foes, unlock powerful skills, and uncover the secrets of a realm shrouded in mystery. Driven by the aching longing for what was lost—hiraeth—and the fire of bravery, this tale is one of sacrifice, exploration, and hope in the face of overwhelming odds.  
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">Aseprite</span>
+                        <span class="tag">Medibang</span>
+                    </div>
+                    <div class="project-info">
+                        <span class="info-item">
+                            <i class="fas fa-clock"></i> Post-deployment
+                        </span>
+                        <span class="info-item">
+                            <i class="fas fa-user-cog"></i> Game designer
+                        </span>
+                        <span class="info-item">
+                            <i class="fas fa-user-cog"></i> Game developer
+                        </span>
+                    </div>
+                  <!---  <a href="#" class="btn-visit-site">
+                        Visit Site <i class="fas fa-external-link-alt"></i>
+                    </a> -->
+                </div>
+                <div class="project-image-container-website-hira">
+                    <img src="Assets/hira-1.png" alt="Hiraeth-Screenshots">
+                    </div>
             </div>
         </div>
     </section>

@@ -1058,6 +1058,34 @@ transform: scale(1.05);
     object-position: left;
 }
 
+.project-image-container-website-hira{
+    flex: 0 0 50%; 
+    display: inline-block;
+    line-height: 0;
+    left: 80px;
+    z-index: 2;
+    position: relative;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    transform: rotate(2deg) scale(1.02);
+    transition: 0.3s ease-in-out;
+
+}
+
+.project-image-container-website-hira img {
+    max-width: 100%;
+    z-index: 2;
+    position: relative;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; 
+    display: block;
+    object-position: left;
+}
+
 .project-image-container-website-left {
     display: inline-block;
     line-height: 0;
@@ -1182,7 +1210,8 @@ transform: scale(1.05);
 
     .project-image-container,
     .project-image-container-website,
-    .project-image-container-website-left {
+    .project-image-container-website-left
+    .project-image-container-website-hira {
         width: 100%;
         left: 0;
         right: 0;
@@ -1206,7 +1235,9 @@ transform: scale(1.05);
 
     .project-image-container img,
     .project-image-container-website img,
-    .project-image-container-website-left img {
+    .project-image-container-website-left img
+    .project-image-container-website-hira img
+     {
         max-width: 100%;
         max-height: none;
         border-radius: 8px;
@@ -1219,7 +1250,8 @@ transform: scale(1.05);
 
     .project-card:hover .project-image-container,
     .project-card:hover .project-image-container-website,
-    .project-card:hover .project-image-container-website-left {
+    .project-card:hover .project-image-container-website-left
+    .project-card:hover .project-image-container-website-hira {
         transform: none !important;
     }
 }
@@ -1236,7 +1268,9 @@ transform: scale(1.05);
 
     .project-image-container,
     .project-image-container-website,
-    .project-image-container-website-left {
+    .project-image-container-website-left
+    .project-image-container-website-hira
+     {
         padding: 8px;
         margin-bottom: 15px;
     }
